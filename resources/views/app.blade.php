@@ -40,10 +40,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#">Tareas</a>
+          <a class="nav-link" href="{{route('todos')}}">Tareas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Categorias</a>
+          <a class="nav-link" href="{{route('categories.index')}}">Categorias</a>
         </li>
       </ul>
       <form class="d-flex">
