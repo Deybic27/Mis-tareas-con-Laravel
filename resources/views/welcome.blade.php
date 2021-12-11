@@ -4,17 +4,17 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Portafolio - Deybic Rojas</title>
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="icons/css/all.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../icons/css/all.min.css">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script type="text/javascript" src="js/function.js"></script>
+	<script type="text/javascript" src="../js/function.js"></script>
 </head>
 <body>
 
 	<!-- desktop header -->
 	<header>
 		<div>
-			<img src="img/logo.svg" alt="">
+			<img src="../img/logo.svg" alt="">
 		</div>
 		<nav>
 			<ul>
@@ -36,7 +36,7 @@
 				<div class="content-header-all-rows">
 					<div class="content-header-each-rows">
 						<div class="content-header-image">
-							<img src="img/avatar-1.svg" alt="">
+							<img src="../img/avatar-1.svg" alt="">
 						</div>
 						<div class="content-header-title">
 							<h2>Deybic Rojas</h2>
