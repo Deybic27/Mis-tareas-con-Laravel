@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Portafolio - Deybic Rojas</title>
-	<link rel="stylesheet" href="{{ asset('../resources/css/style.css') }}">
+	<link rel="stylesheet" href="https://deybic-portfolio.herokuapp.com/../resources/css/style.css">
 	<link rel="stylesheet" href="../icons/css/all.min.css">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="../js/function.js"></script>
