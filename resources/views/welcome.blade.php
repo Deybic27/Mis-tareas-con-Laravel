@@ -46,13 +46,87 @@
 							
 						</div>
 						<div class="content-header-hireme">
-							<a href="#contact" class="btn btn-default">Hire me</a>
+							<a href="#contact" class="btn btn-default">Contrátame</a>
 						</div>
 					</div>
 				</div>
 			</section>
 			<section class="content-about">
-
+				<div class="content-header-all-rows">
+					<div class="content-header-each-rows">
+						<div class="content-title">
+							<div class="content-title-descripcion">
+								<h2>Acerca de mi</h2>
+							</div>
+						</div>
+						<div class="content-text">
+							<div class="content-text-description">
+								<div class="content-text-description2">
+									<p>Soy Deybic Rojas, desarrollador web en Colombia. Me gusta la investigación y la adquisición del conocimiento. Me gusta mucho practicar deporte y salir a excursionar lugares nuevos. Tengo amplia experiancia en el desarrollo backend con PHP.</p>
+								</div>
+								<div class="content-text-skills">
+									<div class="content-text-skill">HTML5</div>
+									<div class="content-text-skills-cant">85%</div>
+								</div>
+								<div class="content-text-skills-progress">
+									<div class="content-text-skills-progress-bar" style="width: 85%; background-color: #FF4C60;"></div>
+								</div>
+								<div class="content-text-skills">
+									<div class="content-text-skill">CSS3</div>
+									<div class="content-text-skills-cant">95%</div>
+								</div>
+								<div class="content-text-skills-progress">
+									<div class="content-text-skills-progress-bar" style="width: 95%; background-color: #ffd15c;"></div>
+								</div>
+								<div class="content-text-skills">
+									<div class="content-text-skill">BOOTSTRAP</div>
+									<div class="content-text-skills-cant">95%</div>
+								</div>
+								<div class="content-text-skills-progress">
+									<div class="content-text-skills-progress-bar" style="width: 95%; background-color: #ffd15c;"></div>
+								</div>
+								<div class="content-text-skills">
+									<div class="content-text-skill">JAVASCRIPT</div>
+									<div class="content-text-skills-cant">95%</div>
+								</div>
+								<div class="content-text-skills-progress">
+									<div class="content-text-skills-progress-bar" style="width: 95%; background-color: #ffd15c;"></div>
+								</div>
+								<div class="content-text-skills">
+									<div class="content-text-skill">JQUERY</div>
+									<div class="content-text-skills-cant">95%</div>
+								</div>
+								<div class="content-text-skills-progress">
+									<div class="content-text-skills-progress-bar" style="width: 95%; background-color: #ffd15c;"></div>
+								</div>
+								<div class="content-text-skills">
+									<div class="content-text-skill">LARAVEL</div>
+									<div class="content-text-skills-cant">95%</div>
+								</div>
+								<div class="content-text-skills-progress">
+									<div class="content-text-skills-progress-bar" style="width: 95%; background-color: #ffd15c;"></div>
+								</div>
+								<div class="content-text-skills">
+									<div class="content-text-skill">PHP</div>
+									<div class="content-text-skills-cant">95%</div>
+								</div>
+								<div class="content-text-skills-progress">
+									<div class="content-text-skills-progress-bar" style="width: 95%; background-color: #ffd15c;"></div>
+								</div>
+								<div class="content-text-skills">
+									<div class="content-text-skill">Structured Query Language (SQL)</div>
+									<div class="content-text-skills-cant">95%</div>
+								</div>
+								<div class="content-text-skills-progress">
+									<div class="content-text-skills-progress-bar" style="width: 95%; background-color: #ffd15c;"></div>
+								</div>
+								<div class="content-skill-download-cv">
+									<a href="#contact" class="btn btn-default">Descargar CV</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</section>
 		</div>
 	</main>

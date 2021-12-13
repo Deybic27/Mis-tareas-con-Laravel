@@ -123,3 +123,78 @@ li a i{
     line-height: 1.7;
     padding: 12px 32px;
 }
+
+.content-title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.content-title-descripcion{
+    width: 60%;
+    display: flex;
+    justify-content: left;
+    padding-bottom: 5%;
+}
+
+.content-text{
+    width: 100%;
+    font-size: 16px;
+    padding-bottom: 1%;
+    display: flex;
+    justify-content: center;
+}
+
+.content-text-description{
+    border: solid white 1px;
+    border-radius: 10px;
+    background-color: white;
+    padding: 3%;
+    width: 50%;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.content-text-description2{
+    width: 100%;
+    font-size: 16px;
+    text-align: justify;
+    padding-bottom: 2%;
+}
+
+.content-text-skills{
+    width: 100%;
+    font-size: 16px;
+    text-align: justify;
+    display: flex;
+}
+
+.content-text-skill{
+    width: 50%;
+    font-size: 16px;
+    padding: 1%;
+    font-weight: bold;
+}
+
+.content-text-skills-cant{
+    width: 50%;
+    font-size: 16px;
+    text-align: right;
+}
+
+.content-text-skills-progress{
+    width: 100%;
+    background-color: #dfe1e6;
+    height: 7px;
+    border-radius: 15px;
+}
+
+.content-text-skills-progress-bar{
+    height: 7px;
+    border-radius: 15px;
+}
+
+.content-skill-download-cv{
+    padding-top: 5%;
+    width: 100%;
+    font-size: 16px;
+}
