@@ -19,12 +19,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/tareas', [TodosController::class, 'index'])->name('todos');;
+Route::get('/tareas', [TodosController::class, '/todo/index'])->name('todos');;
 
-Route::post('/tareas',[TodosController::class, 'store'])->name('todos');
+Route::post('/tareas',[TodosController::class, '/todo/store'])->name('todos');
 
-Route::get('/tareas/{id}',[TodosController::class, 'show'])->name('todos-show');
-Route::patch('/tareas/{id}',[TodosController::class, 'update'])->name('todos-update');
-Route::delete('/tareas/{id}',[TodosController::class, 'destroy'])->name('todos-destroy');
+Route::get('/tareas/{id}',[TodosController::class, '/todo/show'])->name('todos-show');
+Route::patch('/tareas/{id}',[TodosController::class, '/todo/update'])->name('todos-update');
+Route::delete('/tareas/{id}',[TodosController::class, '/todo/destroy'])->name('todos-destroy');
 
-Route::resource('categories', CategoriesController::class);
+Route::resource('/todo/categories', CategoriesController::class);
