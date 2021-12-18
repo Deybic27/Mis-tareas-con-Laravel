@@ -193,12 +193,12 @@
 						<div class="content-text">
 							<div class="content-text-description-all-project">
 								<div class="content-text-description-each-project">
-									<div class="content-all-project">
-										<a class="link-project" href="">
+								<div class="content-all-project">
+										<a target="_blank" class="link-project" href="{{route('todos')}}">
 											<img src="img/student.png" alt="" class="content-project-img">
 											<div class="content-img">
-												<h1>Nombre proyecto</h1>
-												<p>Descripcion del proyecto</p>
+												<h1>Lista tareas</h1>
+												<p>Aplicación para administrar tareas diarias desarrollada con PHP, Laravel y boopstrap.</p>
 												<button class="btn btn-default btn-demo">Ver demo</button>
 											</div>
 										</a>
