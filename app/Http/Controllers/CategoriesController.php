@@ -16,7 +16,7 @@ class CategoriesController extends Controller
     {
         $categories = Category::all();
 
-        return view('todo.categories.index', ['categories' => $categories]);
+        return view('categories.index', ['categories' => $categories]);
     }
 
     /**
