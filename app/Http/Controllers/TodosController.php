@@ -34,12 +34,12 @@ class TodosController extends Controller
          $todos = Todo::all();
          $categories = Category::all();
 
-        return view('todo.todos.index', ['todos' => $todos, 'categories' => $categories]);
+        return view('todos.index', ['todos' => $todos, 'categories' => $categories]);
      }
 
      public function show($id){
         $todo = Todo::find($id);
-       return view('todo.todos.show', ['todo' => $todo]);
+       return view('todos.show', ['todo' => $todo]);
     }
 
     public function update(Request $request, $id){
@@ -48,7 +48,7 @@ class TodosController extends Controller
         $todo->save();
 
         //dd($request);
-       //return view('todo.todos.index', ['succes', 'Tarea actualizada']);
+       //return view('todos.index', ['succes', 'Tarea actualizada']);
        return redirect()->route('todos')->with('success','Tarea actualizada');
     }
 

@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/tareas', [TodosController::class, 'index'])->name('todos');;
+Route::get('/tareas', [TodosController::class, 'index'])->name('todos');
 
 Route::post('/tareas',[TodosController::class, 'store'])->name('todos');
 
