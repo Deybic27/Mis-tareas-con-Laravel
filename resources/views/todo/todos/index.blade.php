@@ -1,4 +1,4 @@
-@extends('app')
+@extends('todo.app')
 
 @section('content')
     <div class="container w-25 border p-4 mt-4">

@@ -34,12 +34,12 @@ class TodosController extends Controller
          $todos = Todo::all();
          $categories = Category::all();
 
-        return view('todos.index', ['todos' => $todos, 'categories' => $categories]);
+        return view('todo.todos.index', ['todos' => $todos, 'categories' => $categories]);
      }
 
      public function show($id){
         $todo = Todo::find($id);
-       return view('todos.show', ['todo' => $todo]);
+       return view('todo.todos.show', ['todo' => $todo]);
     }
 
     public function update(Request $request, $id){

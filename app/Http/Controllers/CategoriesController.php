@@ -16,7 +16,7 @@ class CategoriesController extends Controller
     {
         $categories = Category::all();
 
-        return view('categories.index', ['categories' => $categories]);
+        return view('todo.categories.index', ['categories' => $categories]);
     }
 
     /**
@@ -59,7 +59,7 @@ class CategoriesController extends Controller
     public function show($id)
     {
         $category = Category::find($id);
-        return view('categories.show', ['category' => $category]);
+        return view('todo.categories.show', ['category' => $category]);
     }
 
     /**
