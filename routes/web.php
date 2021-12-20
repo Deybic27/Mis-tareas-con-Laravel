@@ -19,7 +19,9 @@ use App\Http\Controllers\PeopleController;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/new-people', function () {
+    return view('people.new');
+})->name('newpeople');
 Route::get('/tareas', [TodosController::class, 'index'])->name('todos');
 
 Route::post('/tareas',[TodosController::class, 'store'])->name('todos');
@@ -31,3 +33,4 @@ Route::delete('/tareas/{id}',[TodosController::class, 'destroy'])->name('todos-d
 Route::resource('categories', CategoriesController::class);
 
 Route::resource('peoples', PeopleController::class);
+

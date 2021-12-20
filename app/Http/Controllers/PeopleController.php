@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\People;
 
 class PeopleController extends Controller
 {
@@ -13,9 +14,9 @@ class PeopleController extends Controller
      */
     public function index()
     {
-        $peoples1 = "DEYBIC";
-        $peoples2 = "ROJAS";
-        return view('people.index', ['peoples1' => $peoples1, 'peoples2' => $peoples2]);
+        $peoples = People::all();
+
+        return view('people.index', ['peoples' => $peoples]);
     }
 
     /**
@@ -36,7 +37,18 @@ class PeopleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|unique:people|max:255'
+        ]);
+
+        $people = new People;
+        $people->name = $request->name;
+        $people->last_name = $request->last_name;
+        $people->number_phone = $request->number_phone;
+        $people->email = $request->email;
+        $people->save();
+
+        return redirect()->route('peoples.index')->with('success','Nueva persona agregada!');
     }
 
     /**
@@ -47,7 +59,8 @@ class PeopleController extends Controller
      */
     public function show($id)
     {
-        //
+        $people = People::find($id);
+        return view('people.show',['people' => $people]);
     }
 
     /**
@@ -70,7 +83,14 @@ class PeopleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $people = People::find($id);
+        $people->name = $request->name;
+        $people->last_name = $request->last_name;
+        $people->number_phone = $request->number_phone;
+        $people->email = $request->email;
+        $people->save();
+
+        return redirect()->route('peoples.index')->with('success','Datos actualizados!');
     }
 
     /**
@@ -81,6 +101,9 @@ class PeopleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $people = People::find($id);
+        $people->delete();
+
+        return redirect()->route('peoples.index')->with('success','Datos actualizados!');
     }
 }

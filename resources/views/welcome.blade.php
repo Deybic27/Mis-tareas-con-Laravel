@@ -198,17 +198,17 @@
 											<img src="img/student.png" alt="" class="content-project-img">
 											<div class="content-img">
 												<h1>Lista tareas</h1>
-												<p>Aplicación para administrar tareas diarias desarrollada con PHP, Laravel y boopstrap.</p>
+												<p>Aplicación para administrar tareas diarias desarrollada con PHP, Laravel y bootstrap.</p>
 												<button class="btn btn-default btn-demo">Ver demo</button>
 											</div>
 										</a>
 									</div>
 									<div class="content-all-project">
-										<a class="link-project" href="">
+										<a class="link-project" href="{{route('peoples.index')}}">
 											<img src="img/student.png" alt="" class="content-project-img">
 											<div class="content-img">
-												<h1>Nombre proyecto</h1>
-												<p>Descripcion del proyecto</p>
+												<h1>Lista personas</h1>
+												<p>Aplicación para registro de personas desarrollada con PHP, Laravel y Bootstrap</p>
 												<button class="btn btn-default btn-demo">Ver demo</button>
 											</div>
 										</a>

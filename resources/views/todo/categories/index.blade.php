@@ -10,7 +10,7 @@
                     <h6 class="alert alert-success">{{ session('success') }}</h6>                
                 @endif
 
-                @error('title')
+                @error('name')
                 <h6 class="alert alert-danger">{{ $message }}</h6>                
                 @enderror
                 <div class="mb-3">
