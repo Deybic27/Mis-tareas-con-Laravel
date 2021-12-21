@@ -19,18 +19,25 @@ use App\Http\Controllers\PeopleController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
 Route::get('/new-people', function () {
     return view('people.new');
-})->name('newpeople');
-Route::get('/tareas', [TodosController::class, 'index'])->name('todos');
+})->middleware(['auth'])->name('newpeople');
 
-Route::post('/tareas',[TodosController::class, 'store'])->name('todos');
+Route::get('/tareas', [TodosController::class, 'index'])->middleware(['auth'])->name('todos');
 
-Route::get('/tareas/{id}',[TodosController::class, 'show'])->name('todos-show');
-Route::patch('/tareas/{id}',[TodosController::class, 'update'])->name('todos-update');
-Route::delete('/tareas/{id}',[TodosController::class, 'destroy'])->name('todos-destroy');
+Route::post('/tareas',[TodosController::class, 'store'])->middleware(['auth'])->name('todos');
 
-Route::resource('categories', CategoriesController::class);
+Route::get('/tareas/{id}',[TodosController::class, 'show'])->middleware(['auth'])->name('todos-show');
+Route::patch('/tareas/{id}',[TodosController::class, 'update'])->middleware(['auth'])->name('todos-update');
+Route::delete('/tareas/{id}',[TodosController::class, 'destroy'])->middleware(['auth'])->name('todos-destroy');
 
-Route::resource('peoples', PeopleController::class);
+Route::resource('categories', CategoriesController::class)->middleware(['auth']);
 
+Route::resource('peoples', PeopleController::class)->middleware(['auth']);
+
+require __DIR__.'/auth.php';

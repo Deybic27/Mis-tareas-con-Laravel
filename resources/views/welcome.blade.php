@@ -204,7 +204,7 @@
 										</a>
 									</div>
 									<div class="content-all-project">
-										<a class="link-project" href="{{route('peoples.index')}}">
+										<a target="_blank" class="link-project" href="{{route('peoples.index')}}">
 											<img src="img/student.png" alt="" class="content-project-img">
 											<div class="content-img">
 												<h1>Lista personas</h1>
@@ -215,7 +215,7 @@
 									</div>
 							
 									<div class="content-all-project">
-										<a class="link-project" href="">
+										<a target="_blank" class="link-project" href="">
 											<img src="img/student.png" alt="" class="content-project-img">
 											<div class="content-img">
 												<h1>Nombre proyecto</h1>
@@ -225,7 +225,7 @@
 										</a>
 									</div>
 									<div class="content-all-project">
-										<a class="link-project" href="">
+										<a target="_blank" class="link-project" href="">
 											<img src="img/student.png" alt="" class="content-project-img">
 											<div class="content-img">
 												<h1>Nombre proyecto</h1>
@@ -236,7 +236,7 @@
 									</div>
 							
 									<div class="content-all-project">
-										<a class="link-project" href="">
+										<a target="_blank" class="link-project" href="">
 											<img src="img/student.png" alt="" class="content-project-img">
 											<div class="content-img">
 												<h1>Nombre proyecto</h1>
@@ -246,7 +246,7 @@
 										</a>
 									</div>
 									<div class="content-all-project">
-										<a class="link-project" href="">
+										<a target="_blank" class="link-project" href="">
 											<img src="img/student.png" alt="" class="content-project-img">
 											<div class="content-img">
 												<h1>Nombre proyecto</h1>
