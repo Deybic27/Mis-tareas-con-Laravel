@@ -46,6 +46,9 @@
           <a class="nav-link" href="{{route('categories.index')}}">Categorias</a>
         </li>
       </ul>
+      <div class="d-flex">
+          <h4>{{ Auth::user()->name }} - {{ Auth::user()->id }}</h4>
+      </div>
       <form method="POST" action="{{ route('logout') }}">
           @csrf
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Todo;
 use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 
 class TodosController extends Controller
 {
@@ -25,6 +26,7 @@ class TodosController extends Controller
         $todo = new Todo;
         $todo->title = $request->title;
         $todo->category_id = $request->category_id;
+        $todo->user_id = Auth::user()->id;
         $todo->save();
 
         return redirect()->route('todos')->with('success','Tarea creada correctamente');
