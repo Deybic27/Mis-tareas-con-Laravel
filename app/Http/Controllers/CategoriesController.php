@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 
 class CategoriesController extends Controller
 {
@@ -45,6 +46,7 @@ class CategoriesController extends Controller
         $category = new Category;
         $category->name = $request->name;
         $category->color = $request->color;
+        $category->user_id = Auth::user()->id;
         $category->save();
 
         return redirect()->route('categories.index')->with('success','Nueva categoria agregada!');

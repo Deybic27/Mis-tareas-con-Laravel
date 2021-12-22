@@ -20,7 +20,9 @@
             <label for="category_id" class="form-label">Categoria</label>
             <select name="category_id" class="form-select">
                 @foreach ($categories as $category)
-                    <option value="{{$category->id}}">{{$category->name}}</option>                    
+                    @if ($category->user_id == Auth::user()->id)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                    @endif                  
                 @endforeach
             </select>
 

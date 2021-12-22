@@ -14,29 +14,31 @@
     </tr>
   </thead>
   @foreach ($peoples as $people)
-    <tr>
-      <td>{{ $people->id }}</td>
-      <td>{{ $people->name }}</td>
-      <td>{{ $people->last_name }}</td>
-      <td>{{ $people->number_phone }}</td>
-      <td>{{ $people->email }}</td>
-      <td class="text-center">
-        <a href="{{route('peoples.show',[$people->id]);}}">
-          <button type="submit" class="btn btn-warning">
-            <i class="fas fa-edit"></i>
-          </button>
-        </a>
-      </td>
-      <td class="text-center">
-        <form action="{{route('peoples.destroy',[$people->id]);}}" method="POST">
-            @method('DELETE')
-            @csrf
-            <button type="submit" class="btn btn-danger">
-              <i class="fas fa-trash-alt"></i>
+    @if ($people->user_id == Auth::user()->id)
+      <tr>
+        <td>{{ $people->id }}</td>
+        <td>{{ $people->name }}</td>
+        <td>{{ $people->last_name }}</td>
+        <td>{{ $people->number_phone }}</td>
+        <td>{{ $people->email }}</td>
+        <td class="text-center">
+          <a href="{{route('peoples.show',[$people->id]);}}">
+            <button type="submit" class="btn btn-warning">
+              <i class="fas fa-edit"></i>
             </button>
-        </form>  
-      </td>
-    </tr>
+          </a>
+        </td>
+        <td class="text-center">
+          <form action="{{route('peoples.destroy',[$people->id]);}}" method="POST">
+              @method('DELETE')
+              @csrf
+              <button type="submit" class="btn btn-danger">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+          </form>  
+        </td>
+      </tr>
+    @endif
   @endforeach
 </table>
     

@@ -215,11 +215,11 @@
 									</div>
 							
 									<div class="content-all-project">
-										<a target="_blank" class="link-project" href="">
+										<a target="_blank" class="link-project" href="{{route('credit')}}">
 											<img src="img/student.png" alt="" class="content-project-img">
 											<div class="content-img">
-												<h1>Nombre proyecto</h1>
-												<p>Descripcion del proyecto</p>
+												<h1>Simulador crédito</h1>
+												<p>Aplicación para simular crédito desarrollada con Javascript, Jquery y Bootstrap.</p>
 												<button class="btn btn-default btn-demo">Ver demo</button>
 											</div>
 										</a>

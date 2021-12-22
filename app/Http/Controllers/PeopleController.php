@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\People;
+use Illuminate\Support\Facades\Auth;
 
 class PeopleController extends Controller
 {
@@ -46,6 +47,7 @@ class PeopleController extends Controller
         $people->last_name = $request->last_name;
         $people->number_phone = $request->number_phone;
         $people->email = $request->email;
+        $people->user_id = Auth::user()->id;
         $people->save();
 
         return redirect()->route('peoples.index')->with('success','Nueva persona agregada!');

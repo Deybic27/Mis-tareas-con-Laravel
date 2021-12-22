@@ -24,6 +24,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/credit', function () {
+    return view('credit.index');
+})->middleware(['auth'])->name('credit');
+
 Route::get('/new-people', function () {
     return view('people.new');
 })->middleware(['auth'])->name('newpeople');

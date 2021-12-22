@@ -19,6 +19,12 @@ class CreatePeopleTable extends Migration
             $table->string('last_name');
             $table->bigInteger('number_phone');
             $table->string('email');
+            $table->bigInteger('user_id')->unsigned();
+            $table
+                ->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->after('email');
             $table->timestamps();
         });
     }
