@@ -25,8 +25,12 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/credit', function () {
-    return view('credit.index');
+    return view('credit.simulator.index');
 })->middleware(['auth'])->name('credit');
+
+Route::get('/detailcredit', function () {
+    return view('credit.detail.index');
+})->middleware(['auth'])->name('detailcredit');
 
 Route::get('/new-people', function () {
     return view('people.new');
