@@ -15,6 +15,7 @@ div.row:hover>div.col{
     background-color: #6c757d;
     color: white;
     border-right: solid 1px white;
+    cursor: pointer;
 }
 
 a:focus>div.row>div.col{
@@ -34,4 +35,14 @@ a:focus>div.row>div.col{
 
 .scroll-y.registerfee{
     height: 70vh;
+}
+
+.bold-text{
+    font-weight: bold;
+}
+
+div.row.focus{
+    background-color: black;
+    color: white;
+    border-right: solid 1px white;
 }

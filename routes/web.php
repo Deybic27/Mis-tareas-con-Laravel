@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodosController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\PeopleController;
+use App\Http\Controllers\CreditController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,10 +29,6 @@ Route::get('/credit', function () {
     return view('credit.simulator.index');
 })->middleware(['auth'])->name('credit');
 
-Route::get('/detailcredit', function () {
-    return view('credit.detail.index');
-})->middleware(['auth'])->name('detailcredit');
-
 Route::get('/new-people', function () {
     return view('people.new');
 })->middleware(['auth'])->name('newpeople');
@@ -47,5 +44,9 @@ Route::delete('/tareas/{id}',[TodosController::class, 'destroy'])->middleware(['
 Route::resource('categories', CategoriesController::class)->middleware(['auth']);
 
 Route::resource('peoples', PeopleController::class)->middleware(['auth']);
+
+Route::resource('credits', CreditController::class)->middleware(['auth']);
+
+Route::get('/detailcredit', [CreditController::class, 'index'])->middleware(['auth'])->name('detailcredit');
 
 require __DIR__.'/auth.php';

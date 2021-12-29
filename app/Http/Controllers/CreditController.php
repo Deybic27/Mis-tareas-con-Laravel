@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\People;
+use App\Models\Loan;
 use Illuminate\Support\Facades\Auth;
 
-class PeopleController extends Controller
+class CreditController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class PeopleController extends Controller
      */
     public function index()
     {
-        $peoples = People::all();
+        $credits = Loan::all();
 
-        return view('people.index', ['peoples' => $peoples]);
+        return redirect()->route('credits.show',['credit' => $credits[0]->id]);
     }
 
     /**
@@ -38,19 +38,18 @@ class PeopleController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|unique:people|max:255'
-        ]);
+        $credit = new Loan;
+        $credit->name_loan = "Default";
+        $credit->value_loan = $request->loan_value;
+        $credit->number_fee = $request->fee;
+        $credit->value_interest = $request->interest;
+        $credit->monthly_interest = $request->monthly_interest;
+        $credit->total_interest = $request->total_interest;
+        $credit->total_to_pay = $request->total_to_pay;
+        $credit->user_id = Auth::user()->id;
+        $credit->save();
 
-        $people = new People;
-        $people->name = $request->name;
-        $people->last_name = $request->last_name;
-        $people->number_phone = $request->number_phone;
-        $people->email = $request->email;
-        $people->user_id = Auth::user()->id;
-        $people->save();
-
-        return  redirect()->route('peoples.index')->with('success','Nueva persona agregada!');
+        return redirect()->route('credits.index');
     }
 
     /**
@@ -61,8 +60,24 @@ class PeopleController extends Controller
      */
     public function show($id)
     {
-        $people = People::find($id);
-        return view('people.show',['people' => $people]);
+        $detail = Loan::find($id);
+        $credits = Loan::all();
+        
+        $value_loan = $detail->value_loan;
+        $value_fee = $detail->value_loan / $detail->number_fee;
+        $total = 0;
+        $var=[];
+        for ($i=1; $i <= $detail->number_fee; $i++) {
+            $value_interest = ($value_loan * $detail->value_interest) / 100;
+            $var[$i] = $value_interest + $value_fee;
+            $value_loan -= $value_fee;
+            $total += $var[$i];
+        }
+
+        $detail->total_to_pay = $total;
+        $detail->save();
+
+        return view('credit.detail.index', ['details' => $detail, 'credits' => $credits, 'var' => $var, 'total' => $total]);
     }
 
     /**
@@ -85,14 +100,7 @@ class PeopleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $people = People::find($id);
-        $people->name = $request->name;
-        $people->last_name = $request->last_name;
-        $people->number_phone = $request->number_phone;
-        $people->email = $request->email;
-        $people->save();
-
-        return redirect()->route('peoples.index')->with('success','Datos actualizados!');
+        //
     }
 
     /**
@@ -103,9 +111,6 @@ class PeopleController extends Controller
      */
     public function destroy($id)
     {
-        $people = People::find($id);
-        $people->delete();
-
-        return redirect()->route('peoples.index')->with('success','Datos actualizados!');
+        //
     }
 }
