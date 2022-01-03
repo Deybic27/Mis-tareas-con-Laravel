@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Loan;
+use App\Models\Fee_loan;
 use Illuminate\Support\Facades\Auth;
 
 class CreditController extends Controller
@@ -15,9 +16,13 @@ class CreditController extends Controller
      */
     public function index()
     {
-        $credits = Loan::all();
-
-        return redirect()->route('credits.show',['credit' => $credits[0]->id]);
+        $credits = Loan::all()->where('user_id',Auth::user()->id);
+        
+        if ($credits->count() > 0) {
+            return redirect()->route('credits.show',['credit' => $credits->first()->id]);
+        }else{
+            return redirect()->route('credit')->with('No hay creditos');
+        }
     }
 
     /**
@@ -61,23 +66,39 @@ class CreditController extends Controller
     public function show($id)
     {
         $detail = Loan::find($id);
-        $credits = Loan::all();
+        $fees = Fee_loan::all()->where('loan_id',$id);
+        $credits = Loan::all()->where('user_id',Auth::user()->id);
         
-        $value_loan = $detail->value_loan;
-        $value_fee = $detail->value_loan / $detail->number_fee;
-        $total = 0;
-        $var=[];
-        for ($i=1; $i <= $detail->number_fee; $i++) {
-            $value_interest = ($value_loan * $detail->value_interest) / 100;
-            $var[$i] = $value_interest + $value_fee;
-            $value_loan -= $value_fee;
-            $total += $var[$i];
+        $var=0;
+        $total=0;
+        if ($detail->count() > 0) {
+            $value_loan = $detail->value_loan;
+            $value_fee = $detail->value_loan / $detail->number_fee;
+            $total = 0;
+            $var=[];
+            $total_interest = 0;
+            for ($i=1; $i <= $detail->number_fee; $i++) {
+                $value_interest[$i] = ($value_loan * $detail->value_interest) / 100;
+                $var[$i] = $value_interest[$i] + $value_fee;
+                $value_loan -= $value_fee;
+                $total += $var[$i];
+                $total_interest += $value_interest[$i];
+            }
+
+            $detail->total_interest = $total_interest;
+            $detail->total_to_pay = $total;
+            $detail->save();
         }
 
-        $detail->total_to_pay = $total;
-        $detail->save();
-
-        return view('credit.detail.index', ['details' => $detail, 'credits' => $credits, 'var' => $var, 'total' => $total]);
+        return view('credit.detail.index', [
+            'details' => $detail, 
+            'credits' => $credits, 
+            'var' => $var, 
+            'value_interest' => $value_interest, 
+            'value_fee' => $value_fee, 
+            'total' => $total,
+            'fees' => $fees
+        ]);
     }
 
     /**
@@ -111,6 +132,9 @@ class CreditController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $credit = Loan::find($id);
+        $credit->delete();
+
+        return redirect()->route('credits.index');
     }
 }

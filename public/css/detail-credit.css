@@ -11,6 +11,10 @@ a{
     height: 100%;
 }
 
+.colum-h{
+    height: 100%;
+}
+
 div.row:hover>div.col{
     background-color: #6c757d;
     color: white;
@@ -45,4 +49,8 @@ div.row.focus{
     background-color: black;
     color: white;
     border-right: solid 1px white;
+}
+
+.fee{
+    width: 20%;
 }

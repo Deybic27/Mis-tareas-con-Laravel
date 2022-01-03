@@ -218,8 +218,8 @@
 										<a target="_blank" class="link-project" href="{{route('credit')}}">
 											<img src="img/student.png" alt="" class="content-project-img">
 											<div class="content-img">
-												<h1>Simulador crédito</h1>
-												<p>Aplicación para simular crédito desarrollada con Javascript, Jquery y Bootstrap.</p>
+												<h1>Admin créditos</h1>
+												<p>Aplicación para simular y administrar créditos desarrollada con Javascript, Jquery y Bootstrap.</p>
 												<button class="btn btn-default btn-demo">Ver demo</button>
 											</div>
 										</a>

@@ -5,6 +5,7 @@ use App\Http\Controllers\TodosController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\CreditController;
+use App\Http\Controllers\FeeCreditController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,10 @@ Route::resource('peoples', PeopleController::class)->middleware(['auth']);
 
 Route::resource('credits', CreditController::class)->middleware(['auth']);
 
+Route::get('/feescredit/{id}',[FeeCreditController::class, 'store'])->middleware(['auth'])->name('storefee');
+
 Route::get('/detailcredit', [CreditController::class, 'index'])->middleware(['auth'])->name('detailcredit');
+
+Route::resource('feescredit', FeeCreditController::class)->middleware(['auth']);
 
 require __DIR__.'/auth.php';
