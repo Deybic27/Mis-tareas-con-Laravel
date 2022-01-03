@@ -16,7 +16,7 @@ class CreateFeeLoansTable extends Migration
         Schema::create('fee_loans', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('consec_fee');
-            $table->decimal('value_fee',10,2);
+            $table->decimal('value_fee',15,2);
             $table->date('date_fee');
             $table->bigInteger('loan_id')->unsigned();
             $table

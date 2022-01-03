@@ -43,6 +43,16 @@ class CreditController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'loan_value' => 'required',
+            'loan_value' => 'required',
+            'fee' => 'required',
+            'interest' => 'required',
+            'monthly_interest' => 'required',
+            'total_interest' => 'required',
+            'total_to_pay' => 'required'
+        ]);
+
         $credit = new Loan;
         $credit->name_loan = "Default";
         $credit->value_loan = $request->loan_value;

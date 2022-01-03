@@ -135,7 +135,7 @@
 									<div class="content-text-skills-progress-bar" style="width: 95%; background-color: #ffd15c;"></div>
 								</div>
 								<div class="content-skill-download-cv">
-									<a href="" class="btn btn-default">Descargar CV</a>
+									<a href="files/CURRICULUM - DEYBIC ROJAS.pdf" download="CURRICULUM - DEYBIC ROJAS" class="btn btn-default">Descargar CV</a>
 								</div>
 							</div>
 						</div>

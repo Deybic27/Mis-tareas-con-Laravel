@@ -47,7 +47,7 @@
                         <div class="row">
                             <div class="col">{{number_format($details->value_loan)}}</div>
                             <div class="col">{{number_format($details->number_fee)}}</div>
-                            <div class="col">{{number_format($details->value_interest)}}</div>
+                            <div class="col">{{number_format($details->value_interest,2)}}</div>
                         </div>
                         <hr class="mt-4">
                         <div class="row">

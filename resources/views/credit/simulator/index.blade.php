@@ -11,7 +11,7 @@
                             <label for="Loan value" class="form-label">Valor prestamo</label>
                         </div>
                         <div class="col">
-                            <input id="loan_value" name="loan_value" type="number" class="form-control" placeholder="Loan value" aria-label="Loan value">
+                            <input id="loan_value" max="9999999999" name="loan_value" type="number" class="form-control" placeholder="Loan value" aria-label="Loan value" require>
                         </div>
                     </div>
                     <div class="row align-items-center p-1">
@@ -19,7 +19,7 @@
                             <label for="fee" class="form-label">Número de cuotas</label>
                         </div>
                         <div class="col">
-                            <input id="fee" name="fee" type="number" class="form-control" placeholder="Fee" aria-label="Fee">
+                            <input id="fee" name="fee" max="999" type="number" class="form-control" placeholder="Fee" aria-label="Fee">
                         </div>
                     </div>
                     <div class="row align-items-center p-1">
@@ -27,7 +27,7 @@
                             <label for="Interest" class="form-label">% Intereses</label>
                         </div>
                         <div class="col">
-                            <input id="interest" name="interest" step='0.01' type="number" class="form-control" placeholder="Interest" aria-label="Interest">
+                            <input id="interest" name="interest" max="99.99" step='0.01' type="number" class="form-control" placeholder="Interest" aria-label="Interest">
                         </div>
                     </div>
                     <div class="row align-items-center p-1">

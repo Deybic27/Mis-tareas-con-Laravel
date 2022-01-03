@@ -16,12 +16,12 @@ class CreateLoansTable extends Migration
         Schema::create('loans', function (Blueprint $table) {
             $table->id();
             $table->string('name_loan');
-            $table->decimal('value_loan',10,2);
-            $table->decimal('number_fee',10,2);
-            $table->decimal('value_interest',8,2);
-            $table->decimal('monthly_interest',10,2);
-            $table->decimal('total_interest',10,2);
-            $table->decimal('total_to_pay',10,2);
+            $table->decimal('value_loan',15,2);
+            $table->decimal('number_fee',15,2);
+            $table->decimal('value_interest',4,2);
+            $table->decimal('monthly_interest',15,2);
+            $table->decimal('total_interest',15,2);
+            $table->decimal('total_to_pay',15,2);
             $table->bigInteger('user_id')->unsigned();
             $table
                 ->foreign('user_id')
