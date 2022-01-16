@@ -1,0 +1,111 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  margin-top: 42px;
+  height: 80vh;
+}
+
+.container-children {
+  height: 100%;
+  background-color: #aecaf5;
+}
+
+.content-list-years {
+  padding: 5% 0;
+  margin: 0;
+  width: 100%;
+  height: 90%;
+}
+
+.list-years {
+  display: block;
+  width: 100%;
+}
+
+.year {
+  text-align: left;
+  list-style: none;
+  background-color: #032C69;
+  color: white;
+  width: 100%;
+}
+
+ul span {
+  margin: 5%;
+}
+
+.list-month {
+  display: none;
+  transition: all 3s;
+}
+
+.month {
+  text-align: left;
+  list-style: none;
+  background-color: #032C69;
+  color: white;
+}
+
+.year + ul li:hover {
+  background-color: #2166ce;
+  color: white;
+}
+
+.content-month {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.content-month:hover ul.list-month {
+  display: block;
+  transition: all 3s;
+}
+.content-month:hover .year {
+  background-color: #2166ce;
+}
+
+.permanent {
+  height: 90%;
+}
+
+.content-detail {
+  padding: 0 2%;
+  height: 100%;
+  width: 50%;
+  border: solid 5px #032C69;
+}
+
+.content-title {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-title .row {
+  width: 100%;
+}
+
+div.col {
+  text-align: left;
+}
+
+.row .col input {
+  width: 100%;
+}
+.row .col > .btn {
+  width: 100%;
+}
+
+.content-detail-scroll {
+  padding-top: 5%;
+  height: 50vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/*# sourceMappingURL=economy.css.map */

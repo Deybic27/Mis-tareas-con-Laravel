@@ -30,6 +30,10 @@ Route::get('/credit', function () {
     return view('credit.simulator.index');
 })->middleware(['auth'])->name('credit');
 
+Route::get('/economy', function () {
+    return view('credit.economy.index');
+})->middleware(['auth'])->name('economy');
+
 Route::get('/new-people', function () {
     return view('people.new');
 })->middleware(['auth'])->name('newpeople');

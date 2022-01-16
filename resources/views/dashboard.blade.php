@@ -22,7 +22,7 @@
                             </button>
                             </h2>
                             <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">Aplicación para administrar tareas diarias desarrollada con PHP, Laravel y bootstrap. <a href="{{route('todos')}}"> <br><button type="button" class="btn btn-primary"><i class="fas fa-arrow-circle-right"></i> Ver demo</button></a></div>
+                            <div class="accordion-body">Aplicación para administrar tareas diarias desarrollada con PHP, Laravel y bootstrap. <a target="_blank" href="{{route('todos')}}"> <br><button type="button" class="btn btn-primary"><i class="fas fa-arrow-circle-right"></i> Ver demo</button></a></div>
                             </div>
                         </div>
                         <div class="accordion-item">
@@ -32,7 +32,7 @@
                             </button>
                             </h2>
                             <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">Aplicación para registro de personas desarrollada con PHP, Laravel y Bootstrap.<a href="{{route('peoples.index')}}"> <br><button type="button" class="btn btn-primary"><i class="fas fa-arrow-circle-right"></i> Ver demo</button></a></div>
+                            <div class="accordion-body">Aplicación para registro de personas desarrollada con PHP, Laravel y Bootstrap.<a target="_blank" href="{{route('peoples.index')}}"> <br><button type="button" class="btn btn-primary"><i class="fas fa-arrow-circle-right"></i> Ver demo</button></a></div>
                             </div>
                         </div>
                         <div class="accordion-item">
@@ -42,7 +42,7 @@
                             </button>
                             </h2>
                             <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">Aplicación para simular y administrar créditos desarrollada con Javascript, Jquery y Bootstrap.<a href="{{route('credit')}}"> <br><button type="button" class="btn btn-primary"><i class="fas fa-arrow-circle-right"></i> Ver demo</button></a></div>
+                            <div class="accordion-body">Aplicación para simular y administrar créditos desarrollada con Javascript, Jquery y Bootstrap.<a target="_blank" href="{{route('credit')}}"> <br><button type="button" class="btn btn-primary"><i class="fas fa-arrow-circle-right"></i> Ver demo</button></a></div>
                             </div>
                         </div>
                     </div>
