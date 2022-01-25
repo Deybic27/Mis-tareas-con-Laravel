@@ -8,6 +8,8 @@
 	<link rel="stylesheet" href="icons/css/all.min.css">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="js/function.js"></script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9679194423445570"
+     crossorigin="anonymous"></script>
 </head>
 <body>
 
