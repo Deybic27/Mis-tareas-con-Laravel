@@ -6,6 +6,12 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\CreditController;
 use App\Http\Controllers\FeeCreditController;
+use App\Http\Controllers\PostCategoriesController;
+use App\Http\Controllers\PostsController;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Http\Client\Response;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +31,14 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/admin-projects', function () {
+    return view('admin-projects');
+})->middleware(['auth'])->name('admin-projects');
+
+Route::get('/admin-posts', function () {
+    return view('admin-posts');
+})->middleware(['auth'])->name('admin-posts');
 
 Route::get('/credit', function () {
     return view('credit.simulator.index');
@@ -53,5 +67,8 @@ Route::get('/feescredit/{id}',[FeeCreditController::class, 'store'])->middleware
 Route::get('/detailcredit', [CreditController::class, 'index'])->middleware(['auth'])->name('detailcredit');
 
 Route::resource('feescredit', FeeCreditController::class)->middleware(['auth']);
+
+Route::resource('post-categories', PostCategoriesController::class)->middleware(['auth']);
+Route::resource('posts', PostsController::class)->middleware(['auth']);
 
 require __DIR__.'/auth.php';

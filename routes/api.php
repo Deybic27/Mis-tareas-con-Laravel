@@ -21,14 +21,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/listProducts', 'App\Http\Controllers\apiController@listProducts');
 Route::post('/product/{ids}', 'App\Http\Controllers\apiController@product');
 
-use App\Http\Controllers\Api\V1\TodosController as PostV1;
-use App\Http\Controllers\Api\V2\TodosController as PostV2;
+use App\Http\Controllers\Api\V1\TodosController as TodoV1;
+use App\Http\Controllers\Api\V2\TodosController as TodoV2;
 
-Route::apiResource('V1/todos', PostV1::class)
+Route::apiResource('V1/todos', TodoV1::class)
     ->only(['index','show','destroy'])
     ->middleware('auth:sanctum');
 
-Route::apiResource('V2/todos', PostV2::class)
+Route::apiResource('V2/todos', TodoV2::class)
     ->only(['index','show'])
     ->middleware('auth:sanctum');
 
@@ -36,3 +36,9 @@ Route::post('login', [
     App\Http\Controllers\Api\LoginController::class,
     'login'
 ]);
+
+use App\Http\Controllers\Api\V1\PostController as PostV1;
+
+Route::apiResource('V1/post', PostV1::class)
+    ->only(['show']);
+;
