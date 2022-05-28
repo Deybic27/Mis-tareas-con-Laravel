@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   
           document.querySelector("#editPost").style = "display: block";
           document.querySelector("#newPost").style = "display: none";
-          document.querySelector("#editPost form").action = window.location.host+"/posts/"+data["id"];
+          document.querySelector("#editPost form").action = "/posts/"+data["id"];
           document.querySelector("#editPost form #title").value = data["title"];
           document.querySelector("#editPost form #description").value = data["description"];
           document.querySelector("#editPost form img").src = data["image"];
@@ -43,8 +43,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
           document.querySelector("#editCategory").style = "display: block";
           document.querySelector("#newCategory").style = "display: none";
-          document.querySelector("#editCategory form").action = window.location.host+"/post-categories/"+data["id"];
-          document.querySelector("#form_delete_category").action = window.location.host+"/post-categories/"+data["id"];
+          document.querySelector("#editCategory form").action = "/post-categories/"+data["id"];
+          document.querySelector("#form_delete_category").action = "/post-categories/"+data["id"];
           document.querySelector("#editCategory form #name").value = data["name"];
           document.querySelectorAll(".modal-body strong").forEach(element => {
             element.innerHTML = data["name"];
