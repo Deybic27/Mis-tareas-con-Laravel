@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     console.log(params.getAll("p").toString(),'post')
     const idPost = params.getAll("p").toString()
     if (idPost) {
-      fetch(window.location.host+'/api/V1/post/'+idPost)
+      fetch('/api/V1/post/'+idPost)
         .then(response => response.json())
         .then(function(data){
           console.log(data)
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     console.log(params.getAll("c").toString(),'category')
     const idCategory = params.getAll("c").toString()
     if (idCategory) {
-      fetch(window.location.host+'/api/V1/post-category/'+idCategory)
+      fetch('/api/V1/post-category/'+idCategory)
         .then(response => response.json())
         .then(function(data){
           console.log(data, 'data category')
