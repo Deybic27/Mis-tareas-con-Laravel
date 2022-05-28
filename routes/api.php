@@ -42,3 +42,9 @@ use App\Http\Controllers\Api\V1\PostController as PostV1;
 Route::apiResource('V1/post', PostV1::class)
     ->only(['show']);
 ;
+
+use App\Http\Controllers\Api\V1\PostsCategoriesController as PostCategoryV1;
+
+Route::apiResource('V1/post-category', PostCategoryV1::class)
+    ->only(['show']);
+;

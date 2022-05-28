@@ -1,3 +1,6 @@
+<div id="loaderPage" class="loaderPage" style="visibility:hidden;">
+    <div class="loader"></div>
+</div>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -10,7 +13,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('css/post_admin.css') }}" />
     <script type="text/javascript" src="{{ asset('js/post_admin.js') }}"></script>
-
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -31,7 +33,8 @@
                         @foreach ($categories as $category)
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-heading{{$key}}">
-                            
+                            <!-- <a href="#&c={{$category->id}}" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal-category"> <i class="fa-solid fa-pen"></i></a>-->
+                            <a href="#&c={{$category->id}}"><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal-category"><i class="fas fa-arrow-circle-right"></i> Editar</button></a>
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{$key}}" aria-expanded="false" aria-controls="flush-collapse{{$key}}">
                                 {{ $category->name }}
                             </button>
@@ -41,7 +44,7 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th scope="col">#</th>
+                                            <th scope="col">Id</th>
                                             <th scope="col">Título</th>
                                             <th scope="col">&nbsp;</th>
                                             <th scope="col">Author</th>
@@ -57,7 +60,16 @@
                                                 <td>{{$post->user->name}}</td>
                                                 <td>
                                                     <a href="#&p={{$post->id}}"><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal-post"><i class="fas fa-arrow-circle-right"></i> Editar</button></a>
-                                                    <a href="#"><button type="button" class="btn btn-danger"><i class="fas fa-arrow-circle-right"></i> Eliminar</button></a>
+                                                    <form action="{{ route('posts.destroy',[$post->id]) }}" method="POST">
+                                                        @method('DELETE')
+                                                        @csrf
+                                                        <a href="#">
+                                                            <button type="submit" class="btn btn-danger">
+                                                                <i class="fas fa-arrow-circle-right"></i>
+                                                                Eliminar
+                                                            </button>
+                                                        </a>
+                                                    </form>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -81,12 +93,12 @@
         <button class="botonF1">
             <span>+</span>
         </button>
-        <button title="NUEVA CATEGORÍA" class="btnFloat botonF2" data-bs-toggle="modal" data-bs-target="#modal-category">
+        <a href="#"><button title="NUEVA CATEGORÍA" class="btnFloat botonF2" data-bs-toggle="modal" data-bs-target="#modal-category">
             <span>+</span>
-        </button>
-        <button title="NUEVA PUBLICACIÓN" class="btnFloat botonF3" data-bs-toggle="modal" data-bs-target="#modal-post">
+        </button></a>
+        <a href="#"><button title="NUEVA PUBLICACIÓN" class="btnFloat botonF3" data-bs-toggle="modal" data-bs-target="#modal-post">
             <span>+</span>
-        </button>
+        </button></a>
         <!-- <button class="btnFloat botonF4">
             <span>+</span>
         </button>
@@ -94,10 +106,11 @@
             <span>+</span>
         </button> -->
     </div>
-    <!-- Modal -->
+    <!-- Modal New Category-->
     <div class="modal fade" id="modal-category" tabindex="-1" aria-labelledby="labelCategory" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <!-- New Category -->
+            <div id="newCategory" class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="labelCategory">Nueva categoría</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -110,6 +123,26 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-success">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Edit Category -->
+            <div id="editCategory" class="modal-content" style="display: none;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="labelCategory">Editar categoría</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" enctype="multipart/form-data" method="POST">
+                        @method('PATCH')
+                        @csrf
+                        <label for="name">Nombre: </label>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Digite el nombre de la categoría" required>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success">Guardar</button>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-delete-category">Eliminar</button>
                         </div>
                     </form>
                 </div>
@@ -152,10 +185,10 @@
             <div id="editPost" class="modal-content" style="display: none;">
                 <div class="modal-header">
                     <h5 class="modal-title" id="labelPost">Editar publicación</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <a href="#"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></a>
                 </div>
                 <div class="modal-body">
-                    <form action="" enctype="multipart/form-data" method="PATCH">
+                    <form action="" enctype="multipart/form-data" method="POST">
                         @method('PATCH')
                         @csrf
                         <label for="title">Título: </label>
@@ -179,6 +212,30 @@
                         </div>
                     </form>
                 </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="modal-delete-category" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Eliminar categoría</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            Al eliminar la categoria <strong></strong> se eliminan todas las publicaciones asignadas a la misma. ¿Está seguro que desea eliminar la categoria <strong></strong>?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal-category">Close</button>
+                <form id="form_delete_category" action="" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <button type="submit" class="btn btn-danger">
+                        Eliminar
+                    </button>
+                </form>
+            </div>
             </div>
         </div>
     </div>

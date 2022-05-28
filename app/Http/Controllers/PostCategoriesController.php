@@ -83,7 +83,9 @@ class PostCategoriesController extends Controller
      */
     public function update(Request $request, Post_category $post_category)
     {
-        //
+        $post_category->name = $request->name;
+        $post_category->save();
+        return redirect()->route('post-categories.index')->with('success','Categoría actualizada correctamente');
     }
 
     /**
@@ -94,6 +96,11 @@ class PostCategoriesController extends Controller
      */
     public function destroy(Post_category $post_category)
     {
-        //
+        $post_category->posts()->each(function($post){
+            $post->delete();
+        });
+        $post_category->delete();
+        return redirect()->route('post-categories.index')->with('success','Categoría eliminada correctamente');
+
     }
 }
