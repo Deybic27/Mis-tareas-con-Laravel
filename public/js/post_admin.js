@@ -51,12 +51,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
           });
           
         });
+    }else{
+      document.querySelector("#editCategory").style = "display: none";
+      document.querySelector("#newCategory").style = "display: block";
     }
     document.querySelector("#loaderPage").style = "visibility:hidden;";
   }
 
+  // Seleccionas los elementos y lo guardas en una variable
   a = document.querySelectorAll("a");
   console.log(a);
+  // Para la variable "a" le añadimos la funcion "forEach" así "a.forEach"
   a.forEach(element => {
     element.addEventListener("click", function() {
       document.querySelector("#loaderPage").style = "visibility:visible;";
