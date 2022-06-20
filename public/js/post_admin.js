@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           document.querySelector("#editPost form").action = "/posts/"+data["id"];
           document.querySelector("#editPost form #title").value = data["title"];
           document.querySelector("#editPost form #description").value = data["description"];
-          document.querySelector("#editPost form img").src = data["image"];
+          document.querySelector("#editPost form img").src = data["urlImage"];
           document.querySelector("#editPost form #category").value = data["post_category_id"];
         });
     }else{
@@ -51,6 +51,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
           });
           
         });
+    }else{
+      document.querySelector("#editCategory").style = "display: none";
+      document.querySelector("#newCategory").style = "display: block";
     }
     document.querySelector("#loaderPage").style = "visibility:hidden;";
   }

@@ -28,6 +28,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/blog', function () {
+    return view('blog.app');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -70,5 +74,7 @@ Route::resource('feescredit', FeeCreditController::class)->middleware(['auth']);
 
 Route::resource('post-categories', PostCategoriesController::class)->middleware(['auth']);
 Route::resource('posts', PostsController::class)->middleware(['auth']);
+
+
 
 require __DIR__.'/auth.php';

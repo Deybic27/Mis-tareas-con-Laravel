@@ -1,0 +1,191 @@
+$first-color: #cccc;
+$second-color: #032C69;
+$three-color: #dfe1e6;
+$four-color: #FF4C60;
+$five-color: #ffd15c;
+$padding: 0 20px;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", Sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+header{
+    width: 100vw;
+    height: 10vh;
+    border-bottom: solid 1px $first-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .logoHeader{
+        height: 80%;
+        img {
+            height: 100%;
+            border-radius: 50%;
+        }
+    }
+    .menu{
+        width: 90%;
+        height: 100%;
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            a {
+                text-decoration: none;
+                color: black;
+                display: flex;
+                align-items: center;
+                ul {
+                    height: 100%;
+                    padding: $padding;
+                    li {
+                        list-style: none;
+                        height: 5px;
+                    }
+        
+                    &:hover,
+                    &:focus {
+                        li {
+                            height: 5px;
+                            color: $first-color;
+                            background-color: $second-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Footer
+
+footer{
+    height: 50vh;
+    width: 100vw;
+    background-color: $five-color;
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    .init{
+        width: 90%;
+        display: block;
+        .footer__info{
+            float: left;
+            width: 50%;
+            &_logo{
+                height: 30%;
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                &_img{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    width: 50%;
+                    img{
+                        height: 100%;
+                        border-radius: 50%;
+                    }
+                }
+                &_description{
+                    padding: $padding;
+                    width: 50%;
+                }
+            }
+        }
+        .footer__menus{
+            float: right;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            &_menu-1{
+                padding: $padding;
+                &_title{
+                    font-weight: bold;
+                }
+                &_list{
+    
+                    &_item{
+                        list-style: none;
+                    }
+                }
+            }
+            &_menu-2{
+    
+                &_title{
+                    font-weight: bold;
+                }
+                &_list{
+    
+                    &_item{
+                        list-style: none;
+                    }
+                }
+            }
+        }
+    }
+    .footer__copyright{
+        text-align: center;
+        width: 90%;
+    }
+}
+
+// Body
+
+body{
+    width: 100vw;
+    height: auto;
+    .banner{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        &__image{
+            width: 80%;
+            img{
+                padding: 10px;
+                width: 100%;
+            }
+        }
+    }
+    .post{
+        display: flex;
+        justify-content: center;
+        &_body{
+            width: 90%;
+            display: flex;
+            padding: 30px 20px;
+            &__info{
+                width: 30%;
+                &_title{
+                    padding-bottom: 30px;
+                }
+                &_content{
+                    padding-bottom: 30px;
+                    line-height: 1.5rem;
+                }
+                &_social{
+                    display: flex;
+                }
+            }
+            &__content{
+                justify-content: left;
+                width: 70%;
+                &_description{
+                    p{
+                        line-height: 1.5rem;
+                        padding-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

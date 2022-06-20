@@ -113,7 +113,7 @@
             <div id="newCategory" class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="labelCategory">Nueva categoría</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <a href="#"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></a>
                 </div>
                 <div class="modal-body">
                     <form action="{{ route('post-categories.store') }}" method="POST">
@@ -121,7 +121,7 @@
                         <label for="name">Nombre: </label>
                         <input type="text" name="name" id="name" class="form-control" placeholder="Digite el nombre de la categoría" required>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <a href="#"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button></a>
                             <button type="submit" class="btn btn-success">Guardar</button>
                         </div>
                     </form>
@@ -131,7 +131,7 @@
             <div id="editCategory" class="modal-content" style="display: none;">
                 <div class="modal-header">
                     <h5 class="modal-title" id="labelCategory">Editar categoría</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <a href="#"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></a>
                 </div>
                 <div class="modal-body">
                     <form action="" enctype="multipart/form-data" method="POST">
@@ -140,7 +140,7 @@
                         <label for="name">Nombre: </label>
                         <input type="text" name="name" id="name" class="form-control" placeholder="Digite el nombre de la categoría" required>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <a href="#"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button></a>
                             <button type="submit" class="btn btn-success">Guardar</button>
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-delete-category">Eliminar</button>
                         </div>
@@ -155,7 +155,7 @@
             <div id="newPost" class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="labelPost">Nueva publicación</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <a href="#"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></a>
                 </div>
                 <div class="modal-body">
                     <form action="{{ route('posts.store') }}" enctype="multipart/form-data" method="POST">

@@ -37,7 +37,14 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return $post;
+        $data = [
+            'id' => $post['id'],
+            'title' => $post['title'],
+            'description' => $post['description'],
+            'post_category_id' => $post['post_category_id'],
+            'urlImage' => $post->getMedia('image')->first()->getUrl()
+        ];
+        return $data;
     }
 
     /**
