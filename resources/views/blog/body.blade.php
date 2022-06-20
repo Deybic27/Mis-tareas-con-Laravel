@@ -1,7 +1,7 @@
 <body>
     <section class="banner">
         <div class="banner__image">
-            <img src="{{ asset('storage/image/bannerHtml.jpg') }}" alt="">
+            <img src="{{ asset('image/bannerHtml.jpg') }}" alt="">
         </div>
     </section>
     <section class="post">

@@ -3,7 +3,7 @@
         <div class="footer__info">
             <div class="footer__info_logo">
                 <div class="footer__info_logo_img">
-                    <img src="{{ asset('storage/image/imgPerfil.jpg') }}" alt="">
+                    <img src="{{ asset('image/imgPerfil.jpg') }}" alt="">
                 </div>
                 <div class="footer__info_logo_description">
                     Deybic Rojas, nacido en la Ciudad de Cúcuta, Norte de Santander, Colombia el 14 de Agosto de 1997.

@@ -1,0 +1,168 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", Sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+header {
+  width: 100vw;
+  height: 10vh;
+  border-bottom: solid 1px #cccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .logoHeader {
+  height: 80%;
+}
+header .logoHeader img {
+  height: 100%;
+  border-radius: 50%;
+}
+header .menu {
+  width: 90%;
+  height: 100%;
+}
+header .menu nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+header .menu nav a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+header .menu nav a ul {
+  height: 100%;
+  padding: 0 20px;
+}
+header .menu nav a ul li {
+  list-style: none;
+  height: 5px;
+}
+header .menu nav a ul:hover li, header .menu nav a ul:focus li {
+  height: 5px;
+  color: #cccc;
+  background-color: #032C69;
+}
+
+footer {
+  height: 50vh;
+  width: 100vw;
+  background-color: #ffd15c;
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+footer .init {
+  width: 90%;
+  display: block;
+}
+footer .init .footer__info {
+  float: left;
+  width: 50%;
+}
+footer .init .footer__info_logo {
+  height: 30%;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+footer .init .footer__info_logo_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+}
+footer .init .footer__info_logo_img img {
+  height: 100%;
+  border-radius: 50%;
+}
+footer .init .footer__info_logo_description {
+  padding: 0 20px;
+  width: 50%;
+}
+footer .init .footer__menus {
+  float: right;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+footer .init .footer__menus_menu-1 {
+  padding: 0 20px;
+}
+footer .init .footer__menus_menu-1_title {
+  font-weight: bold;
+}
+footer .init .footer__menus_menu-1_list_item {
+  list-style: none;
+}
+footer .init .footer__menus_menu-2_title {
+  font-weight: bold;
+}
+footer .init .footer__menus_menu-2_list_item {
+  list-style: none;
+}
+footer .footer__copyright {
+  text-align: center;
+  width: 90%;
+}
+
+body {
+  width: 100vw;
+  height: auto;
+}
+body .banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+body .banner__image {
+  width: 80%;
+}
+body .banner__image img {
+  padding: 10px;
+  width: 100%;
+}
+body .post {
+  display: flex;
+  justify-content: center;
+}
+body .post_body {
+  width: 90%;
+  display: flex;
+  padding: 30px 20px;
+}
+body .post_body__info {
+  width: 30%;
+}
+body .post_body__info_title {
+  padding-bottom: 30px;
+}
+body .post_body__info_content {
+  padding-bottom: 30px;
+  line-height: 1.5rem;
+}
+body .post_body__info_social {
+  display: flex;
+}
+body .post_body__content {
+  justify-content: left;
+  width: 70%;
+}
+body .post_body__content_description p {
+  line-height: 1.5rem;
+  padding-bottom: 20px;
+}
+
+/*# sourceMappingURL=styles_post.css.map */

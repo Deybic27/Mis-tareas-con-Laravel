@@ -1,0 +1,1 @@
+sass --watch styles_post.scss ../../public/css/styles_post.css

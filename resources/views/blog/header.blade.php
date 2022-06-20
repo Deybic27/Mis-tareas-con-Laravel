@@ -1,10 +1,10 @@
 <head>
-    <link rel="stylesheet" href="{{ asset('storage/css/styles_post.css') }}">
-    <link rel="stylesheet" href="{{ asset('storage/icons/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles_post.css') }}">
+    <link rel="stylesheet" href="{{ asset('icons/css/all.min.css') }}">
 </head>
 <header>
     <div class="logoHeader">
-        <img src="{{ asset('storage/image/imgPerfil.jpg') }}" alt="">
+        <img src="{{ asset('image/imgPerfil.jpg') }}" alt="">
     </div>
     <div class="menu">
         <nav>
