@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -60,7 +61,17 @@ class PostsController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        $data = [
+            'id' => $post->id,
+            'title' => $post['title'],
+            'description' => $post['description'],
+            'post_category_id' => $post['post_category_id'],
+            'created_at' => $post['created_at'],
+            'author' => User::find($post->user_id)->name,
+            'media' => $post->getMedia('image')->first()
+        ];
+        // dd($data['description']);
+        return view('blog.app',["post" => $data]);
     }
 
     /**

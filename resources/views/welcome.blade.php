@@ -275,7 +275,7 @@
 						<div class="content-text">
 							<div class="content-text-description-all-project">
 								<div class="content-text-description-each-project">
-									<div id="post1" class="content-all-blog">
+									<a target="blank" href="{{ route('blog-show',['post' => 11]) }}" id="post1" class="content-all-blog">
 										<div class="content-blog-img">
 											<img src="img/student.png" alt="" class="content-project-img">
 										</div>
@@ -284,8 +284,8 @@
 											<p>14 Octubre 2021 </p>
 											<p>Admin</p>
 										</div>
-									</div>
-									<div id="post2" class="content-all-blog">
+									</a>
+									<a href="#" id="post2" class="content-all-blog">
 										<div class="content-blog-img">
 											<img src="img/student.png" alt="" class="content-project-img">
 										</div>
@@ -294,8 +294,8 @@
 											<p>14 Noviembre 2021 </p>
 											<p>Admin</p>
 										</div>
-									</div>
-									<div id="post3" class="content-all-blog">
+									</a>
+									<a href="#" id="post3" class="content-all-blog">
 										<div class="content-blog-img">
 											<img src="img/student.png" alt="" class="content-project-img">
 										</div>
@@ -304,8 +304,8 @@
 											<p>14 Diciembre 2021 </p>
 											<p>Admin</p>
 										</div>
-									</div>
-									<div id="post4" class="content-all-blog hidden">
+									</a>
+									<a href="#" id="post4" class="content-all-blog hidden">
 										<div class="content-blog-img">
 											<img src="img/student.png" alt="" class="content-project-img">
 										</div>
@@ -314,8 +314,8 @@
 											<p>14 Enero 2022</p>
 											<p>Admin</p>
 										</div>
-									</div>
-									<div id="post5" class="content-all-blog hidden">
+									</a>
+									<a href="#" id="post5" class="content-all-blog hidden">
 										<div class="content-blog-img">
 											<img src="img/student.png" alt="" class="content-project-img">
 										</div>
@@ -324,8 +324,8 @@
 											<p>14 Febrero 2022 </p>
 											<p>Admin</p>
 										</div>
-									</div>
-									<div id="post6" class="content-all-blog hidden">
+									</a>
+									<a href="#" id="post6" class="content-all-blog hidden">
 										<div class="content-blog-img">
 											<img src="img/student.png" alt="" class="content-project-img">
 										</div>
@@ -334,8 +334,8 @@
 											<p>14 Marzo 2022 </p>
 											<p>Admin</p>
 										</div>
-									</div>
-									<div id="post7" class="content-all-blog hidden">
+									</a>
+									<a href="#" id="post7" class="content-all-blog hidden">
 										<div class="content-blog-img">
 											<img src="img/student.png" alt="" class="content-project-img">
 										</div>
@@ -344,7 +344,7 @@
 											<p>14 Abril 2022 </p>
 											<p>Admin</p>
 										</div>
-									</div>
+									</a>
 									<div class="content-header-hireme">
 										<a id="previous" href="" class="btn btn-default"><i class="fas fa-chevron-circle-left"></i></a>
 										<a id="next" href="" class="btn btn-default"><i class="fas fa-chevron-circle-right"></i></a>

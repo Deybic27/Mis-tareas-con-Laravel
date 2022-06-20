@@ -74,7 +74,7 @@ Route::resource('feescredit', FeeCreditController::class)->middleware(['auth']);
 
 Route::resource('post-categories', PostCategoriesController::class)->middleware(['auth']);
 Route::resource('posts', PostsController::class)->middleware(['auth']);
-
+Route::get('/blog/{post}',[PostsController::class, 'show'])->name('blog-show');
 
 
 require __DIR__.'/auth.php';

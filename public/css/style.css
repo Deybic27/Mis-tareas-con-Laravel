@@ -389,6 +389,7 @@ li a i{
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     cursor: pointer;
+    color: #5e5c7f;
 }
 
 .content-blog-img{

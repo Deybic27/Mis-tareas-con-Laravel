@@ -31,8 +31,8 @@ $(document).ready(function() {
     $("a#next").click(function(event) {
         event.preventDefault();
         if ($("#post"+hide).is(':hidden') && hide<=7) {
-            $("#post"+show).hide("slow");
-            $("#post"+hide).show(2000);
+            $("#post"+show).hide("fast");
+            $("#post"+hide).show("fast");
             hidep=hide;
             showp=show;
             if (hide<=6) {
@@ -46,8 +46,8 @@ $(document).ready(function() {
     $("a#previous").click(function(event) {
         event.preventDefault();
         if ($("#post"+showp).is(':hidden') && hidep<=7) {
-            $("#post"+hidep).hide("slow");
-            $("#post"+showp).show(2000);
+            $("#post"+hidep).hide("fast");
+            $("#post"+showp).show("fast");
             hide=hidep;
             show=showp;
             hidep-=1;
