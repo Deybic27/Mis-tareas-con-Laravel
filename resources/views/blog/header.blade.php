@@ -1,6 +1,6 @@
 <head>
-    <link rel="stylesheet" href="{{ asset('css/styles_post.css') }}">
-    <link rel="stylesheet" href="{{ asset('icons/css/all.min.css') }}">
+    <link rel="stylesheet" href="css/styles_post.css">
+    <link rel="stylesheet" href="icons/css/all.min.css">
 </head>
 <header>
     <div class="logoHeader">
